@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>☑️To Do List</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header class="head">
+        <div class="top">
+        <h2>To Do List ✅</h2>
+        </div>
+    </header>
+<div class="input-flex">
+    <div class="task-column">
+        <button class="daily-delete">Delete All <i class="fa-solid fa-trash-arrow-up"></i></button>
+        <div class="daily-delete-popup">
+             <h4>Are you sure want to delete ?</h4>
+             <button class="yes">Yes</button>
+             <button class="no">No</button>
+        </div>
+        <div class="daily-pop"></div>
+        <i class="fa-solid fa-star"></i>
+        <span id="daily-total-value"> 0</span>
+        <span id="daily-slash">/</span>
+        <span id="daily-completed-value">0</span>
+        <div id="daily-task">
+            <span class="text">Add Daily Tasks💪</span> 
+            <i class="fa-solid fa-plus" id="daily-plus-btn"></i> <br>
+        </div>
+        <input type="text" placeholder="Add your list" id="daily"> 
+        <button id="daily-add-btn">Add⚡</button><br>
+        <div id="daily-un-completed">Un-Completed Tasks</div> <hr>
+        <div id="daily-completed">Task Completed</div>
+    </div>
+
+    <div class="task-column">
+        <button class="future-delete">Delete All <i class="fa-solid fa-trash-arrow-up"></i></button>
+        <div class="future-delete-popup">
+             <h4>Are you sure want to delete ?</h4>
+             <button class="secondYes">Yes</button>
+             <button class="secondNo">No</button>
+        </div>
+        <div class="future-popup"></div>
+        <i class="fa-solid fa-star"></i>
+        <span id="future-total-value"> 0</span>
+        <span id="future-slash">/</span>
+        <span id="future-completed-value">0</span>
+        <div id="future-task">
+            <span class="text">Add Occasional Tasks🎯</span> 
+            <i class="fa-solid fa-plus" id="future-plus-btn"></i> <br>
+        </div>
+        <input type="text" placeholder="Add your list" id="future"> 
+        <button id="future-add-btn">Add⚡</button>
+        <div id="future-un-completed">Un-Completed</div> <hr>
+        <div id="future-completed">Task Completed</div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

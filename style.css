@@ -1,0 +1,318 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.top{
+    height: 30px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    align-items: center;
+    color: white;
+}
+.fa-star{
+    color: yellow;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+button{
+    cursor: pointer;
+}
+.total-stars{
+    font-size: 18px;
+    font-weight: bold;
+}
+#total-value{
+    font-size: 20px;
+    color: rgb(18, 245, 10);
+}
+#completed-value{
+    font-size: 20px;
+    color: red;
+}
+#slash,#daily-slash,#future-slash{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.task-column>.fa-star{
+    color: rgb(247, 247, 82);
+    font-size: 20px;
+
+}
+#daily-total-value,#future-total-value{
+    font-size: 20px;
+    color: green;
+}
+#daily-completed-value,#future-completed-value{
+    font-size: 20px;
+    color: tomato;
+}
+/* to do list */
+input{
+    margin: 10px;
+    padding: 8px 20px;
+    display: none;
+    margin-bottom: 30px;
+}
+button{
+    margin: 10px;
+    padding: 8px 20px;
+    display: none;
+    margin-bottom: 30px;
+}
+.text{
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: blanchedalmond;
+}
+#daily-task{
+    margin-bottom: 10px;
+}
+#future-task{
+    margin-bottom: 28px;
+}
+.fa-plus,.fa-xmark{
+    margin-left: 10px;
+    margin-top: 15px;
+    background-color: chocolate;
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.input-flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 40px;
+    flex-wrap: wrap;
+}
+
+.task-column {
+    width: 45%;
+    height: 100%;
+    text-align: center;
+    background-color: #cec6c6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 880px) {
+   .task-column{
+     width: 80% ;
+   }
+}
+
+@media screen and (max-width: 480px) {
+   button{
+    margin-top: 10px;
+     padding: 6px 10px;
+   }
+   input{
+    margin-bottom: 10px;
+    padding: 8px 10px;
+   }
+}
+/* Hover effects */
+
+.daily-delete:hover{
+    background-color:rgb(253, 94, 37);
+    font-size: 14px;
+    cursor: pointer;
+}
+.future-delete:hover{
+    background-color:rgb(253, 94, 37);
+    font-size: 14px;
+    cursor: pointer;
+}
+#future-add-btn:hover {
+    background-color: #d3d3d3;
+    cursor: pointer;
+}
+#daily-add-btn:hover {
+    background-color: #d3d3d3;
+    cursor: pointer;
+}
+input:focus {
+    outline: 2px solid rgb(104, 104, 172);
+    transform: translateY(-2px);
+}
+.fa-circle:hover{
+    color: green;
+    font-size: 20px;
+}
+.fa-circle-check:hover{
+    color: rgb(246, 35, 35);
+    font-size: 20px;
+}
+.fa-trash:hover{
+    color: rgb(254, 28, 28);
+    font-size: 20px;
+}
+.fa-pen-to-square:hover{
+     font-size: 20px;
+     color: rgb(250, 4, 4);
+}
+.fa-plus:hover{
+    font-size: 21px;
+}
+.fa-xmark:hover{
+    font-size: 21px;
+}
+/* Results */
+.result-element {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #f8f8f8;
+}
+
+.task-checkbox {
+  transform: scale(1.2);
+}
+.task-text {
+  font-size: 14px;
+}
+.task-checkbox:checked + .task-text {
+  text-decoration: line-through;
+  color: gray;
+}
+#daily-un-completed,#future-un-completed,#task-container{
+    display: none;
+    color: red;
+    font-size: 25px;
+}
+
+#daily-completed,#future-completed{
+    display: none;  
+    color: green;
+    font-size: 25px;
+}
+.fa-pen-to-square{
+     font-size: 18px;
+     color: black;
+}
+.fa-trash{
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+.fa-circle-check{
+    font-size: 18px;
+}
+.fa-circle{
+    font-size: 18px;
+}
+.daily-checkbox,.future-checkbox{
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    text-transform: capitalize;
+    word-break: break-word;
+}
+
+/* Popups */
+
+.popupDaily{
+    position: fixed;
+    bottom: 84%;
+    margin-left: 12%;
+    background-color: #5bb25d;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: 'opacity 0.5s ease-in-out';
+}
+.popup-message{
+  background-color: #5bb25d;
+  color: white;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 15px;
+  animation: fadeInOut 3s ease-in-out;
+}
+
+.alertDaily{
+    position: fixed;
+    bottom: 84%;
+     left: 50%;
+    transform: translateX(-50%);
+    background-color: red;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: 'opacity 0.5s ease-in-out';
+}
+/* Delete */
+
+.daily-delete{
+    display: block;
+    margin: 0px;
+    padding: 5px 10px;
+    background-color: red;
+    border: white;
+    border-radius: 2px;
+    color: white;
+}
+.daily-delete-popup>button {
+    display: inline;
+    padding: 2px 12px;
+    margin-bottom: 5px;
+}
+.daily-delete-popup{
+    background-color: rgb(250, 50, 50);
+    margin-left: 30%;
+    color: white;
+    margin-right: 30%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-weight: normal;
+    display: none;
+}
+.future-delete-popup{
+    background-color: rgb(250, 50, 50);
+    margin-left: 30%;
+    color: white;
+    margin-right: 30%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-weight: normal;
+    display: none;
+}
+.yes:hover{
+    font-size: 14px;
+    background-color: gray;
+}
+.no:hover{
+    font-size: 14px;
+    background-color: gray;
+}
+.future-delete-popup>button{
+    display: inline;
+    padding: 2px 12px;
+    margin-bottom: 5px;
+}
+.future-delete{
+    display: block;
+    margin: 0px;
+    padding: 5px 10px;
+    background-color: red;
+    border: white;
+    border-radius: 2px;
+    color: white;
+}
