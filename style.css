@@ -108,7 +108,7 @@ button{
 }
 
 /* For very small screens - below 420px */
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 500px) {
   
   /* Stack tasks fully in center */
   .input-flex {
@@ -118,8 +118,7 @@ button{
   }
 
   .task-column {
-    width: 100%;
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto;
   }
 
   /* Reduce margins and padding for buttons and inputs */
