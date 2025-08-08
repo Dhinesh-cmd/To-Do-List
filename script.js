@@ -115,7 +115,7 @@ dailyAddBtn.addEventListener('click', () => {
 
     const editIcon = document.createElement('i');
     editIcon.classList.add('fa-regular', 'fa-pen-to-square');
-    editIcon.style.marginLeft = '20px';
+    editIcon.style.marginLeft = '10px';
     editIcon.style.cursor = 'pointer';
 
     textContainer.append(checkboxIcon, taskText);
@@ -327,7 +327,7 @@ futureAddBtn.addEventListener('click', () => {
 
     const secondEditIcon = document.createElement('i');
     secondEditIcon.classList.add('fa-regular', 'fa-pen-to-square');
-    secondEditIcon.style.marginLeft = '20px';
+    secondEditIcon.style.marginLeft = '10px';
     secondEditIcon.style.cursor = 'pointer';
 
     secondTextContainer.append(secondCheckboxIcon,secondTaskValue);

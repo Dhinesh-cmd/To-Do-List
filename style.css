@@ -107,16 +107,68 @@ button{
    }
 }
 
-@media screen and (max-width: 480px) {
-   button{
-    margin-top: 10px;
-     padding: 6px 10px;
-   }
-   input{
-    margin-bottom: 10px;
-    padding: 8px 10px;
-   }
+/* For very small screens - below 420px */
+@media screen and (max-width: 420px) {
+  
+  /* Stack tasks fully in center */
+  .input-flex {
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+
+  .task-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Reduce margins and padding for buttons and inputs */
+  button, input {
+    padding: 6px 10px;
+    margin: 5px 0;
+    font-size: 14px;
+  }
+
+  /* Make icons slightly smaller */
+  .fa-plus, .fa-xmark, 
+  .fa-circle, .fa-circle-check, 
+  .fa-trash, .fa-pen-to-square {
+    font-size: 16px;
+    margin: 5px;
+  }
+
+  /* Adjust popup positioning for small width */
+  .popupDaily, .alertDaily {
+    bottom: 85%;
+    font-size: 14px;
+    padding: 1px 2px;
+  }
+
+  /* Delete popups full width */
+  .daily-delete-popup, .future-delete-popup {   
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  /* Text size for tasks */
+  .text, .daily-checkbox, .future-checkbox {
+    font-size: 14px;
+  }
+
+  /* Counter numbers */
+  #daily-total-value, #future-total-value,
+  #daily-completed-value, #future-completed-value,
+  #total-value, #completed-value {
+    font-size: 16px;
+  }
+  .fa-plus:hover{
+    font-size: 17px;
 }
+.fa-xmark:hover{
+    font-size: 17px;
+}
+}
+
 /* Hover effects */
 
 .daily-delete:hover{
@@ -247,11 +299,11 @@ input:focus {
 .alertDaily{
     position: fixed;
     bottom: 84%;
-     left: 50%;
+    left: 50%;
     transform: translateX(-50%);
     background-color: red;
     color: white;
-    padding: 12px 24px;
+    padding: 8px 12px;
     border-radius: 10px;
     font-size: 18px;
     transition: 'opacity 0.5s ease-in-out';
@@ -274,25 +326,27 @@ input:focus {
 }
 .daily-delete-popup{
     background-color: rgb(250, 50, 50);
-    margin-left: 30%;
     color: white;
-    margin-right: 30%;
     padding: 8px;
+    margin: 10px auto;        
     margin-bottom: 10px;
     border-radius: 4px;
     font-weight: normal;
     display: none;
+    max-width: 400px;     
+    width: 80%;        
 }
 .future-delete-popup{
-    background-color: rgb(250, 50, 50);
-    margin-left: 30%;
+   background-color: rgb(250, 50, 50);
     color: white;
-    margin-right: 30%;
     padding: 8px;
+    margin: 10px auto;        
     margin-bottom: 10px;
     border-radius: 4px;
     font-weight: normal;
     display: none;
+    max-width: 400px;     
+    width: 80%;        
 }
 .yes:hover{
     font-size: 14px;
