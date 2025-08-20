@@ -119,6 +119,13 @@ button{
    }
 }
 
+@media screen and (max-width: 600px){
+    #img-daily,#img-future{
+        width: 70%;
+        height: 200px;
+    }
+}
+
 /* For very small screens - below 420px */
 @media screen and (max-width: 500px) {
   
@@ -181,6 +188,10 @@ button{
 }
 .fa-xmark:hover{
     font-size: 17px;
+}
+#img-daily,#img-future{
+        width: 80%;
+        height: 200px;
 }
 }
 
@@ -385,3 +396,4 @@ input:focus {
     border-radius: 2px;
     color: white;
 }
+
