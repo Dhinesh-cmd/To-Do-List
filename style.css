@@ -2,6 +2,9 @@
     margin: 0px;
     padding: 0px;
 }
+body{
+    background-color: blanchedalmond;
+}   
 .top{
     height: 30px;
     background: linear-gradient(90deg, #667eea, #764ba2);
@@ -9,7 +12,12 @@
     justify-content: space-around;
     padding: 20px;
     align-items: center;
-    color: white;
+    color: white; 
+}
+#img-daily,#img-future{
+    width: 70%;
+    height: 300px;
+    display: inline-block;
 }
 .fa-star{
     color: yellow;
@@ -25,11 +33,11 @@ button{
 }
 #total-value{
     font-size: 20px;
-    color: rgb(18, 245, 10);
+    color: #28a745;
 }
 #completed-value{
     font-size: 20px;
-    color: red;
+    color: #dc3545;
 }
 #slash,#daily-slash,#future-slash{
     font-size: 20px;
@@ -42,24 +50,28 @@ button{
 }
 #daily-total-value,#future-total-value{
     font-size: 20px;
-    color: green;
+    color: #28a745;
 }
 #daily-completed-value,#future-completed-value{
     font-size: 20px;
-    color: tomato;
+    color: #dc3545;
 }
 /* to do list */
 input{
-    margin: 10px;
+    /* margin: 10px; */
     padding: 8px 20px;
     display: none;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 }
 button{
-    margin: 10px;
+    /* margin: 10px; */
     padding: 8px 20px;
     display: none;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
+}
+#daily-add-btn,#future-add-btn{
+    margin: 0px;
+    padding: 6px 12px;
 }
 .text{
     font-size: 20px;
@@ -71,7 +83,7 @@ button{
     margin-bottom: 10px;
 }
 #future-task{
-    margin-bottom: 28px;
+    margin-bottom: 10px;
 }
 .fa-plus,.fa-xmark{
     margin-left: 10px;
@@ -103,7 +115,7 @@ button{
 
 @media screen and (max-width: 880px) {
    .task-column{
-     width: 80% ;
+     width: 80%;
    }
 }
 
@@ -127,12 +139,16 @@ button{
     margin: 5px 0;
     font-size: 14px;
   }
-
+  #daily-add-btn,#future-add-btn{
+     padding: 4px 10px;
+    margin: 5px 0;
+    font-size: 14px;
+  }
   /* Make icons slightly smaller */
   .fa-plus, .fa-xmark, 
   .fa-circle, .fa-circle-check, 
   .fa-trash, .fa-pen-to-square {
-    font-size: 16px;
+    font-size: 14px;
     margin: 5px;
   }
 
@@ -193,20 +209,20 @@ input:focus {
     transform: translateY(-2px);
 }
 .fa-circle:hover{
-    color: green;
+    color: #28a745;
     font-size: 20px;
 }
 .fa-circle-check:hover{
-    color: rgb(246, 35, 35);
+    color: #dc3545;
     font-size: 20px;
 }
 .fa-trash:hover{
-    color: rgb(254, 28, 28);
+    color:#dc3545;
     font-size: 20px;
 }
 .fa-pen-to-square:hover{
      font-size: 20px;
-     color: rgb(250, 4, 4);
+     color: #dc3545;
 }
 .fa-plus:hover{
     font-size: 21px;
@@ -239,14 +255,14 @@ input:focus {
 }
 #daily-un-completed,#future-un-completed,#task-container{
     display: none;
-    color: red;
-    font-size: 25px;
+    color: #dc3545;
+    font-size: 20px;
 }
 
 #daily-completed,#future-completed{
     display: none;  
-    color: green;
-    font-size: 25px;
+    color: #28a745;
+    font-size: 20px;
 }
 .fa-pen-to-square{
      font-size: 18px;
@@ -277,7 +293,7 @@ input:focus {
     position: fixed;
     bottom: 84%;
     margin-left: 12%;
-    background-color: #5bb25d;
+    background-color: #28a745;
     color: white;
     padding: 12px 24px;
     border-radius: 10px;
@@ -285,7 +301,7 @@ input:focus {
     transition: 'opacity 0.5s ease-in-out';
 }
 .popup-message{
-  background-color: #5bb25d;
+  background-color: #28a745;
   color: white;
   padding: 10px 20px;
   margin-bottom: 10px;
@@ -364,7 +380,7 @@ input:focus {
     display: block;
     margin: 0px;
     padding: 5px 10px;
-    background-color: red;
+    background-color: #dc3545;
     border: white;
     border-radius: 2px;
     color: white;

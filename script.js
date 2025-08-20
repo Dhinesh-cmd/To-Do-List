@@ -24,6 +24,8 @@ const dailyDeleteAll = document.querySelector('.daily-delete');
 const dailyDeleteAllPopup = document.querySelector('.daily-delete-popup');
 const deleteYesbtn = document.querySelector('.yes');
 const deleteNobtn = document.querySelector('.no');
+const dailyImage = document.getElementById('img-daily');
+
 
 function showPopupDaily(message) {
     const popupContainer = document.querySelector('.daily-pop');
@@ -99,7 +101,7 @@ dailyAddBtn.addEventListener('click', () => {
     textContainer.style.alignItems = "center";
 
     const taskText = document.createElement('span');
-    taskText.textContent = dailyInput.value + "❗";
+    taskText.textContent = dailyInput.value ;
     taskText.classList.add('daily-checkbox');
 
     const checkboxIcon = document.createElement('i');
@@ -127,6 +129,8 @@ dailyAddBtn.addEventListener('click', () => {
     dailyTotalStar.textContent = Number(dailyTotalStar.textContent) + 1;
     dailyInput.value = "";
 
+    dailyImage.style.display = 'none';
+
     modifyStarValueColor(dailyTotalStar, dailyCompletedStar);
     saveDailyTasksToLocalStorage();
 
@@ -136,6 +140,12 @@ dailyAddBtn.addEventListener('click', () => {
             dailyCompletedStar.textContent = Number(dailyCompletedStar.textContent) - 1;
         }
         dailyTotalStar.textContent = Number(dailyTotalStar.textContent) - 1;
+        if(dailyTotalStar.textContent == 0){
+            dailyImage.style.display = 'inline-block';
+        }
+        else{
+            dailyImage.style.display = 'none';
+        }
         checkAndHideSection(dailyUnCompleted);
         checkAndHideSection(dailyCompleted);
         modifyStarValueColor(dailyTotalStar, dailyCompletedStar);
@@ -149,8 +159,21 @@ dailyAddBtn.addEventListener('click', () => {
             dailyInput.value = taskText.textContent.trim().slice(0, -1);
             newDiv.remove();
             dailyTotalStar.textContent = Number(dailyTotalStar.textContent) - 1;
+        if(dailyTotalStar.textContent == 0){
+            dailyImage.style.display = 'inline-block';
+        }
+        else{
+            dailyImage.style.display = 'none';
+        }
             if (taskText.style.textDecoration === 'line-through') {
                 dailyCompletedStar.textContent = Number(dailyCompletedStar.textContent) - 1;
+
+        if(dailyTotalStar.textContent == 0){
+            dailyImage.style.display = 'inline-block';
+        }
+        else{
+            dailyImage.style.display = 'none';
+        }
             }
             checkAndHideSection(dailyUnCompleted);
             checkAndHideSection(dailyCompleted);
@@ -212,6 +235,7 @@ deleteYesbtn.addEventListener('click', () => {
     checkAndHideSection(dailyCompleted);
     modifyStarValueColor(dailyTotalStar,dailyCompletedStar);
     dailyDeleteAllPopup.style.display ='none';
+    dailyImage.style.display = 'inline-block'
 
     localStorage.removeItem("dailyTasks");
 });
@@ -236,6 +260,7 @@ const secondDeleteAllPopup = document.querySelector('.future-delete-popup');
 const secondYesbtn = document.querySelector('.secondYes');
 const secondNobtn = document.querySelector('.secondNo');
 const secondPlusBtn = document.getElementById('future-plus-btn');
+const secondImage = document.getElementById('img-future');
 
 function secondShowPopup(message) {
   const popupParent = document.querySelector('.future-popup'); // select existing div
@@ -311,7 +336,7 @@ futureAddBtn.addEventListener('click', () => {
     secondTextContainer.style.alignItems = "center";
 
     const secondTaskValue = document.createElement('span');
-    secondTaskValue.textContent = futureInput.value.trim()+'❗';
+    secondTaskValue.textContent = futureInput.value.trim();
     secondTaskValue.classList.add('future-checkbox');
     
     const secondCheckboxIcon = document.createElement('i');
@@ -338,6 +363,14 @@ futureAddBtn.addEventListener('click', () => {
     secondUnCompleted.appendChild(secondNewDiv);  
     secondTotalStar.textContent = Number(secondTotalStar.textContent)+1;
     futureInput.value = '';
+
+    if(secondTotalStar.textContent == 0){
+            secondImage.style.display = 'inline-block';
+        }
+        else{
+            secondImage.style.display = 'none';
+        }
+
     secondModifyStarValueColor(secondTotalStar,secondCompletedStar);
     saveSecondTasksToLocalStorage();
 
@@ -345,8 +378,24 @@ futureAddBtn.addEventListener('click', () => {
         secondNewDiv.remove();
         if (secondTaskValue.style.textDecoration === 'line-through') {
             secondCompletedStar.textContent = Number(secondCompletedStar.textContent) - 1;
+        
+        if(secondTotalStar.textContent == 0){
+            secondImage.style.display = 'inline-block';
+        }
+        else{
+            secondImage.style.display = 'none';
+        }
+
         }
         secondTotalStar.textContent = Number(secondTotalStar.textContent) - 1;
+
+        if(secondTotalStar.textContent == 0){
+            secondImage.style.display = 'inline-block';
+        }
+        else{
+            secondImage.style.display = 'none';
+        }
+
         checkAndHideSection(secondUnCompleted);
         checkAndHideSection(secondCompleted);
         secondModifyStarValueColor(secondTotalStar, secondCompletedStar);
@@ -361,8 +410,24 @@ futureAddBtn.addEventListener('click', () => {
             futureInput.value = secondTaskValue.textContent.trim().slice(0, -1);
             secondNewDiv.remove();
             secondTotalStar.textContent = Number(secondTotalStar.textContent) - 1;
-            if (secondTaskValue.style.textDecoration === 'line-through') {
-                secondCompletedStar.textContent = Number(secondCompletedStar.textContent) - 1;
+
+        if(secondTotalStar.textContent == 0){
+            secondImage.style.display = 'inline-block';
+        }
+        else{
+            secondImage.style.display = 'none';
+        }
+
+        if (secondTaskValue.style.textDecoration === 'line-through') {
+            secondCompletedStar.textContent = Number(secondCompletedStar.textContent) - 1;
+
+        if(secondTotalStar.textContent == 0){
+            secondImage.style.display = 'inline-block';
+        }
+        else{
+            secondImage.style.display = 'none';
+        }
+
             }
             checkAndHideSection(secondUnCompleted);
             checkAndHideSection(secondCompleted);
@@ -420,7 +485,6 @@ secondYesbtn.addEventListener('click', () => {
     taskDivsUnCompleted.forEach(task => task.remove());
     taskDivsCompleted.forEach(task => task.remove());
 
-
     futureInput.value = '';
     secondTotalStar.textContent = '0';
     secondCompletedStar.textContent = '0';
@@ -428,6 +492,13 @@ secondYesbtn.addEventListener('click', () => {
     secondModifyStarValueColor(secondTotalStar, secondCompletedStar);
     checkAndHideSection(secondUnCompleted);
     checkAndHideSection(secondCompleted);
+
+    if(secondTotalStar.textContent == 0){
+            secondImage.style.display = 'inline-block';
+        }
+        else{
+            secondImage.style.display = 'none';
+        }
     localStorage.removeItem("secondTasks");
 }); 
 
