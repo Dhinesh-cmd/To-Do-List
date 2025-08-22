@@ -156,7 +156,7 @@ dailyAddBtn.addEventListener('click', () => {
         if (dailyInput.value.trim() !== '') {
             alertPopupDaily('⚠️Input Area is not Empty⚠️');
         } else {
-            dailyInput.value = taskText.textContent.trim().slice(0, -1);
+            dailyInput.value = taskText.textContent.trim()
             newDiv.remove();
             dailyTotalStar.textContent = Number(dailyTotalStar.textContent) - 1;
         if(dailyTotalStar.textContent == 0){
@@ -407,7 +407,7 @@ futureAddBtn.addEventListener('click', () => {
         if (futureInput.value.trim() !== '') {
             alertPopupDaily('⚠️Input Area is not Empty⚠️');
         } else {
-            futureInput.value = secondTaskValue.textContent.trim().slice(0, -1);
+            futureInput.value = secondTaskValue.textContent.trim();
             secondNewDiv.remove();
             secondTotalStar.textContent = Number(secondTotalStar.textContent) - 1;
 
